@@ -1,0 +1,197 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f7f6;
+  color: #000000;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: #6daaeb;
+  color: white;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+header p {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Main Layout */
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: grid;
+  gap: 20px;
+}
+
+/* For desktop screen */
+@media (min-width: 1025px) {
+  main {
+    grid-template-columns: 40% 60%;
+  }
+}
+
+/* Section styling */
+
+section {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #007bff;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.input {
+  margin-bottom: 15px;
+}
+
+.input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input input[type="text"],
+.input input[type="email"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for validation feedback */
+.input input.invalid {
+  border-color: rgb(184, 94, 94);
+  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.5);
+}
+
+/* Submit button */
+
+button#submitbtn {
+  background-color: #47ae75;
+  color: white;
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button#submitbtn:hover {
+  background-color: #218838;
+}
+
+/* Style for records section         */
+
+#records_table {
+  overflow-x: auto; /* Allow horizontal scrolling if table is too wide */
+  max-height: 400px;
+}
+
+#records_table.scrollable {
+  overflow-y: auto; /* Allow vertical scrolling if table exceeds max-height */
+}
+
+/* Styling table */
+
+.student_table {
+  width: 100%;
+  border-collapse: collapse; /* Removes spaces between table cells */
+  text-align: left;
+  min-width: 600px;
+}
+
+.student_table th,
+.student_table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.student_table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* zebra striping for better redability */
+.student_table tr:nth-child(even) {
+  background-color: white;
+}
+
+.student_table tr:hover {
+  background-color: #ccc;
+}
+
+/* Buttons in table */
+
+.action_btn {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+}
+
+.edit_btn {
+  background-color: gold;
+}
+
+.delete_btn {
+  background-color: crimson;
+}
+
+/* Responsiveness */
+
+/* For tablet screen */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  main {
+    padding: 0px 15px;
+  }
+
+  #registration_form {
+    order: 1; /* Form first */
+  }
+  #records {
+    order: 2; /* Records second */
+  }
+}
+
+/* For mobile screen */
+
+@media (max-width: 640px) {
+  main {
+    width: 95%;
+  }
+
+  button#submitbtn {
+    padding: 10px;
+  }
+}
