@@ -137,6 +137,12 @@ function checkValidity(input) {
     if (isNaN(Number(value)) || value.includes(" ")) {
       isValid = false;
     }
+  } else if (input.id === "emailid") {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(value)) {
+      isValid = false;
+    }
   } else if (input.id === "number") {
     const isNumeric = !isNaN(Number(value));
     const hasMinLength = value.length >= 10;
